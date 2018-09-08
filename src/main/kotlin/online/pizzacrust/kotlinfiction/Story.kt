@@ -19,7 +19,5 @@ open class BasicStory(override val name: String,
                       val chapterBlock: (ChapterInfo) -> String,
                       override val chapters: List<ChapterInfo>,
                       override val author: String): Story {
-    override fun chapter(info: ChapterInfo): String {
-        return chapterBlock(info)
-    }
+    override fun chapter(info: ChapterInfo): String = chapterBlock(info)
 }

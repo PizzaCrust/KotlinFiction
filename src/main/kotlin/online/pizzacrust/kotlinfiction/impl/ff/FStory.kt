@@ -14,6 +14,7 @@ internal fun getStoryChapters(id: String): List<ChapterInfo> {
     val page = getStoryPage(id, 1)
     val chapterSelect = page.body().getElementById("chap_select")
     val chapters = mutableListOf<ChapterInfo>()
+    if (chapterSelect == null) return chapters
     for (element in chapterSelect.getElementsByTag("option")) {
         val value = element.attr("value")
         val name = element.text()
